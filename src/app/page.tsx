@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, MotionConfig, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from "framer-motion";
 import {
   ArrowRight,
   Clock3,
   Coffee,
   ExternalLink,
   MapPin,
-  Sparkles,
+  Menu,
+  X,
 } from "lucide-react";
 
 const navItems = [
@@ -26,7 +28,7 @@ const signatureMenu = [
     description: "Slow-fermented crust, tender crumb, baked for the table.",
     price: "RM 18",
     image:
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1509440159596-0249088772ff-900.jpg",
   },
   {
     name: "Butter Croissant",
@@ -34,7 +36,7 @@ const signatureMenu = [
     description: "Laminated layers with a crisp shell and soft butter finish.",
     price: "RM 12",
     image:
-      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1555507036-ab1f4038808a-900.jpg",
   },
   {
     name: "Yuzu Cloud Coffee",
@@ -42,7 +44,7 @@ const signatureMenu = [
     description: "A citrus-led coffee drink with a light, creamy top.",
     price: "RM 16",
     image:
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1495474472287-4d71bcdd2085-900.jpg",
   },
   {
     name: "Passion Espresso Soda",
@@ -50,7 +52,7 @@ const signatureMenu = [
     description: "Bright passion fruit, espresso depth, and sparkling lift.",
     price: "RM 15",
     image:
-      "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1622483767028-3f66f32aef97-900.jpg",
   },
   {
     name: "Smoked Chicken Tartine",
@@ -58,7 +60,7 @@ const signatureMenu = [
     description: "Open-faced bakery toast with greens and savoury richness.",
     price: "RM 28",
     image:
-      "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1528735602780-2552fd46c7af-900.jpg",
   },
   {
     name: "Mushroom Cream Pasta",
@@ -66,7 +68,7 @@ const signatureMenu = [
     description: "Cafe comfort plated with clean lines and earthy notes.",
     price: "RM 30",
     image:
-      "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1473093295043-cdd812d0e601-900.jpg",
   },
   {
     name: "Berry Cream Danish",
@@ -74,7 +76,7 @@ const signatureMenu = [
     description: "Fruit, custard, and pastry in an elegant bakery bite.",
     price: "RM 14",
     image:
-      "https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1519915028121-7d3463d20b13-900.jpg",
   },
   {
     name: "Chocolate Gallery Cake",
@@ -82,7 +84,7 @@ const signatureMenu = [
     description: "A rich slice built for slow coffee and quiet corners.",
     price: "RM 20",
     image:
-      "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1578985545062-69928b1d9587-900.jpg",
   },
 ];
 
@@ -91,25 +93,25 @@ const experiences = [
     title: "Bakery",
     text: "Freshly baked bread and pastries displayed with gallery-like care.",
     image:
-      "https://images.unsplash.com/photo-1608198093002-ad4e005484ec?auto=format&fit=crop&w=1100&q=85",
+      "/images/photo-1608198093002-ad4e005484ec-1100.jpg",
   },
   {
     title: "Cafe",
     text: "Coffee, crafted drinks, and casual dining for slower city hours.",
     image:
-      "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1100&q=85",
+      "/images/photo-1501339847302-ac426a4a7cbb-1100.jpg",
   },
   {
     title: "Gallery",
     text: "Architecture, natural light, and interior details made to linger.",
     image:
-      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1100&q=85",
+      "/images/photo-1554118811-1e0d58224f24-1100.jpg",
   },
   {
     title: "Experience",
     text: "A place to meet, dine, work, and spend time beyond the plate.",
     image:
-      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1100&q=85",
+      "/images/photo-1517248135467-4c7edcad34c4-1100.jpg",
   },
 ];
 
@@ -117,42 +119,42 @@ const gallery = [
   {
     label: "Interior",
     image:
-      "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1559925393-8be0ec4767c8-900.jpg",
   },
   {
     label: "Bakery",
     image:
-      "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1517433367423-c7e5b0f35086-900.jpg",
   },
   {
     label: "Coffee",
     image:
-      "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1511920170033-f8396924c348-900.jpg",
   },
   {
     label: "Pastry",
     image:
-      "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1464305795204-6f5bbfc7fb81-900.jpg",
   },
   {
     label: "Dining",
     image:
-      "https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1551218808-94e220e084d2-900.jpg",
   },
   {
     label: "Lifestyle",
     image:
-      "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1521017432531-fbd92d768814-900.jpg",
   },
   {
     label: "Display",
     image:
-      "https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1483695028939-5bb13f8648b0-900.jpg",
   },
   {
     label: "Dessert",
     image:
-      "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=900&q=85",
+      "/images/photo-1563729784474-d77dbb933a9e-900.jpg",
   },
 ];
 
@@ -162,19 +164,27 @@ const fadeUp = {
 };
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const reducedMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const heroY = useTransform(scrollY, [0, 900], [0, 140]);
+  useMotionValueEvent(scrollY, "change", (value) => setScrolled(value > 40));
   return (
+    <MotionConfig reducedMotion="user">
     <main className="min-h-screen bg-[#f5f2ea] text-[#202321]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#0d3026]/70 text-white backdrop-blur-xl">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
+      <a href="#about" className="skip-link">Skip to content</a>
+      <header className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled || menuOpen ? "border-black/10 bg-[#f5f2ea] text-[#164f3b]" : "border-white/10 bg-[#0d3026]/40 text-white backdrop-blur-xl"}`}>
+        <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 md:px-10">
           <a href="#home" className="font-serif text-xl tracking-wide">
             Barcook Gallery
           </a>
-          <div className="hidden items-center gap-8 text-sm uppercase tracking-[0.22em] text-white/78 md:flex">
+          <div className="hidden items-center gap-8 text-sm uppercase lg:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="transition hover:text-white"
+                className="transition hover:opacity-60"
               >
                 {item.label}
               </a>
@@ -186,24 +196,31 @@ export default function Home() {
           >
             Visit Us
           </a>
+          <button type="button" aria-label={menuOpen ? "Close navigation" : "Open navigation"} title={menuOpen ? "Close navigation" : "Open navigation"} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(!menuOpen)} onKeyDown={(event) => { if (event.key === "Escape") setMenuOpen(false); }} className="flex h-11 w-11 shrink-0 items-center justify-center lg:hidden">
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </nav>
+        <nav id="mobile-navigation" aria-label="Mobile navigation" hidden={!menuOpen} className="border-t border-black/10 px-5 pb-5 lg:hidden">
+          {navItems.map((item) => <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className="block py-3">{item.label}</a>)}
         </nav>
       </header>
 
       <section
         id="home"
-        className="relative flex min-h-screen items-end overflow-hidden bg-[#0d3026] px-5 pb-14 pt-28 text-white md:px-10 md:pb-20"
+        className="relative flex min-h-[92svh] items-end overflow-hidden bg-[#0d3026] px-5 pb-14 pt-28 text-white md:px-10 md:pb-20"
       >
         <motion.div
           className="absolute inset-0"
+          style={{ y: reducedMotion ? 0 : heroY }}
           initial={{ scale: 1.08 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2.4, ease: "easeOut" }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2200&q=90"
+            src="/images/photo-1517248135467-4c7edcad34c4-2200.jpg"
             alt="Premium bakery cafe interior with warm lights"
             fill
-            priority
+            preload
             sizes="100vw"
             className="object-cover"
           />
@@ -219,15 +236,11 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl"
           >
-            <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-sm uppercase tracking-[0.28em] text-white/75">
-              <Sparkles size={16} />
-              The Digital Barcook Gallery
-            </span>
             <h1 className="font-serif text-6xl leading-[0.92] tracking-normal md:text-8xl lg:text-9xl">
               Barcook Gallery
             </h1>
             <p className="mt-5 font-serif text-3xl text-white/90 md:text-5xl">
-              Bakery. Cafe. Gallery.
+              Bakery. Café. Gallery.
             </p>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">
               Where freshly baked creations, crafted drinks and thoughtful
@@ -258,8 +271,7 @@ export default function Home() {
           >
             <p className="text-sm uppercase tracking-[0.28em]">Petaling Jaya</p>
             <p className="mt-4 max-w-sm text-2xl font-light leading-9">
-              A premium bakery-cafe concept shaped for brand presentation,
-              menu discovery, and location conversion.
+              Fresh from the oven. A seat by the window. A little time for yourself.
             </p>
           </motion.div>
         </div>
@@ -294,9 +306,9 @@ export default function Home() {
               and remember the details.
             </p>
             <p className="max-w-3xl text-lg leading-8 text-[#5f625e]">
-              This concept website frames Barcook as a premium visual brand:
-              warm craft downstairs, calm cafe moments upstairs, and an
-              editorial digital presence that feels gallery-worthy.
+              From the first coffee of the morning to a shared afternoon treat,
+              discover thoughtfully crafted flavours and a welcoming space to
+              slow down, gather, and enjoy the everyday.
             </p>
           </motion.div>
         </div>
@@ -318,9 +330,9 @@ export default function Home() {
               <Image
                 src={
                   [
-                    "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=1200&q=85",
-                    "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=85",
-                    "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=85",
+                    "/images/photo-1517433367423-c7e5b0f35086-1200.jpg",
+                    "/images/photo-1511920170033-f8396924c348-1200.jpg",
+                    "/images/photo-1554118811-1e0d58224f24-1200.jpg",
                   ][index]
                 }
                 alt={label}
@@ -343,18 +355,18 @@ export default function Home() {
             <div>
               <p className="section-kicker">Signature Menu</p>
               <h2 className="mt-4 max-w-3xl font-serif text-5xl leading-tight md:text-7xl">
-                A polished preview of the Barcook table.
+                Freshly made. Thoughtfully served.
               </h2>
             </div>
             <a
-              href="#visit"
+              href="#menu-products"
               className="inline-flex w-fit items-center gap-2 border-b border-[#164f3b] pb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#164f3b]"
             >
               Explore Our Menu <ArrowRight size={17} />
             </a>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div id="menu-products" className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {signatureMenu.map((item, index) => (
               <motion.article
                 key={item.name}
@@ -427,7 +439,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d3026] via-[#0d3026]/55 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-6 transition duration-500 group-hover:-translate-y-3">
                   <h3 className="font-serif text-4xl">{item.title}</h3>
-                  <p className="mt-4 translate-y-2 text-base leading-7 text-white/0 transition duration-500 group-hover:translate-y-0 group-hover:text-white/82 md:min-h-28">
+                  <p className="experience-description mt-4 text-base leading-7 text-white/85 transition duration-500 md:min-h-28">
                     {item.text}
                   </p>
                 </div>
@@ -447,8 +459,8 @@ export default function Home() {
               </h2>
             </div>
             <p className="max-w-md text-lg leading-8 text-[#5f625e]">
-              Interior, bakery, coffee, food, and lifestyle visuals composed for
-              a premium company profile prototype.
+              Sunlit corners, freshly baked favourites, and the small moments
+              that make a day worth savouring.
             </p>
           </div>
 
@@ -565,5 +577,6 @@ export default function Home() {
         </div>
       </footer>
     </main>
+    </MotionConfig>
   );
 }
