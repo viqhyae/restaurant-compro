@@ -174,19 +174,19 @@ export default function Home() {
     <MotionConfig reducedMotion="user">
     <main className="min-h-screen bg-[#f5f2ea] text-[#202321]">
       <a href="#about" className="skip-link">Skip to content</a>
-      <header className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled || menuOpen ? "border-black/10 bg-[#f5f2ea] text-[#164f3b]" : "border-white/10 bg-[#0d3026]/40 text-white backdrop-blur-xl"}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 border-b text-white backdrop-blur-xl transition-colors duration-300 ${scrolled || menuOpen ? "border-white/10 bg-[#0d3026]/95" : "border-white/10 bg-[#0d3026]/40"}`}>
         <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 md:px-10">
           <a
             href="#home"
             aria-label="Barcook home"
-            className="relative block h-12 w-12 shrink-0 overflow-hidden bg-[#304c40]"
+            className="relative block h-12 w-16 shrink-0 overflow-hidden"
           >
             <Image
               src="/images/brand/barcook-logo-transparent.png"
               alt="Barcook"
               fill
-              sizes="48px"
-              className="object-cover"
+              sizes="64px"
+              className="scale-[1.45] object-contain"
             />
           </a>
           <div className="hidden items-center gap-8 text-sm uppercase lg:flex">
