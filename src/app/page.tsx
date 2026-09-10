@@ -176,8 +176,18 @@ export default function Home() {
       <a href="#about" className="skip-link">Skip to content</a>
       <header className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled || menuOpen ? "border-black/10 bg-[#f5f2ea] text-[#164f3b]" : "border-white/10 bg-[#0d3026]/40 text-white backdrop-blur-xl"}`}>
         <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 md:px-10">
-          <a href="#home" className="font-serif text-xl tracking-wide">
-            Barcook Gallery
+          <a
+            href="#home"
+            aria-label="Barcook home"
+            className="relative block h-12 w-12 shrink-0 overflow-hidden bg-[#304c40]"
+          >
+            <Image
+              src="/images/brand/barcook-logo.png"
+              alt="Barcook"
+              fill
+              sizes="48px"
+              className="object-cover"
+            />
           </a>
           <div className="hidden items-center gap-8 text-sm uppercase lg:flex">
             {navItems.map((item) => (
@@ -562,10 +572,20 @@ export default function Home() {
 
       <footer className="bg-[#0d3026] px-5 py-10 text-white md:px-10">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
+          <div className="flex items-center gap-5">
+            <Image
+              src="/images/brand/barcook-logo.png"
+              alt="Barcook"
+              width={112}
+              height={112}
+              sizes="112px"
+              className="h-28 w-28 shrink-0 object-cover"
+            />
+            <div>
             <p className="font-serif text-3xl">Barcook Gallery</p>
             <p className="mt-2 text-white/65">Bakery / Cafe / Gallery</p>
             <p className="mt-2 text-white/65">Petaling Jaya, Malaysia</p>
+            </div>
           </div>
           <div className="flex gap-5 text-sm uppercase tracking-[0.18em] text-white/70">
             <a href="https://www.instagram.com/barcook_my/">Instagram</a>
