@@ -182,7 +182,7 @@ export default function Home() {
             className="relative block h-12 w-12 shrink-0 overflow-hidden bg-[#304c40]"
           >
             <Image
-              src="/images/brand/barcook-logo.png"
+              src="/images/brand/barcook-logo-transparent.png"
               alt="Barcook"
               fill
               sizes="48px"
@@ -574,7 +574,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-5">
             <Image
-              src="/images/brand/barcook-logo.png"
+              src="/images/brand/barcook-logo-transparent.png"
               alt="Barcook"
               width={112}
               height={112}
