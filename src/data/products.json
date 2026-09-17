@@ -1,0 +1,335 @@
+[
+  {
+    "name": "Banana Cake",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=banana-cake",
+    "image": "/images/menu/catalogue/01-banana-cake.jpg"
+  },
+  {
+    "name": "Kouign Amann",
+    "category": "Croissant & Danish",
+    "url": "https://barcookbakery.com/site/?product=1791-2",
+    "image": "/images/menu/catalogue/02-1791-2.jpg"
+  },
+  {
+    "name": "Yuzu Waterfall",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=yuzu-waterfall",
+    "image": "/images/menu/catalogue/03-yuzu-waterfall.jpg"
+  },
+  {
+    "name": "Kokoro Strawberry Cheesecake",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=kokoro-strawberry-cheesecake",
+    "image": "/images/menu/catalogue/04-kokoro-strawberry-cheesecake.jpg"
+  },
+  {
+    "name": "Premium Sausage",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=1708-2",
+    "image": "/images/menu/catalogue/05-1708-2.jpg"
+  },
+  {
+    "name": "Gâteau au chocolat",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=gateau-au-chocolat",
+    "image": "/images/menu/catalogue/06-gateau-au-chocolat.jpg"
+  },
+  {
+    "name": "Carrot Cake",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=carrot-cake",
+    "image": "/images/menu/catalogue/07-carrot-cake.jpg"
+  },
+  {
+    "name": "Mango Passion",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=mango-passion-1kg",
+    "image": "/images/menu/catalogue/08-mango-passion-1kg.jpg"
+  },
+  {
+    "name": "Mango Passion",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=mango-passion",
+    "image": "/images/menu/catalogue/09-mango-passion.jpg"
+  },
+  {
+    "name": "Forêt Noire",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=foret-noire",
+    "image": "/images/menu/catalogue/10-foret-noire.jpg"
+  },
+  {
+    "name": "Shio Pan",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=shio-pan",
+    "image": "/images/menu/catalogue/11-shio-pan.jpg"
+  },
+  {
+    "name": "Curry Chicken & Cheese",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=curry-chicken-cheese",
+    "image": "/images/menu/catalogue/12-curry-chicken-cheese.jpg"
+  },
+  {
+    "name": "Cocktail Cheese",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=cocktail-cheese",
+    "image": "/images/menu/catalogue/13-cocktail-cheese.jpg"
+  },
+  {
+    "name": "Pumpkin Walnut",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=pumpkin-walnut",
+    "image": "/images/menu/catalogue/14-pumpkin-walnut.jpg"
+  },
+  {
+    "name": "Lemon Cake",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=lemon-cake",
+    "image": "/images/menu/catalogue/15-lemon-cake.jpg"
+  },
+  {
+    "name": "German Pudding",
+    "category": "Classic Cake",
+    "url": "https://barcookbakery.com/site/?product=german-pudding",
+    "image": "/images/menu/catalogue/16-german-pudding.jpg"
+  },
+  {
+    "name": "Longevity Peach, Shou Cake",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=longevity-peach-with-the-word-shou",
+    "price": "SGD $398 (Min 4kg) SGD $498 (5kg)",
+    "image": "/images/menu/catalogue/17-longevity-peach-with-the-word-shou.jpg"
+  },
+  {
+    "name": "Longevity Peach Cake",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=longevity-peach",
+    "price": "SGD $228 (Min 2kg) SGD $288 (3kg)",
+    "image": "/images/menu/catalogue/18-longevity-peach.jpg"
+  },
+  {
+    "name": "Wedding Cake (2-tiers)",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=wedding-2-tiers",
+    "price": "SGD $358 (Min 4kg)",
+    "image": "/images/menu/catalogue/19-wedding-2-tiers.jpg"
+  },
+  {
+    "name": "21st Birthday Cake (White Key)",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=21st-birthday-white-key",
+    "price": "SGD $260 (Min 3kg)",
+    "image": "/images/menu/catalogue/20-21st-birthday-white-key.jpg"
+  },
+  {
+    "name": "21st Birthday Cake (Blue Key)",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=21st-birthday-blue-key",
+    "price": "SGD $260 (Min 3kg)",
+    "image": "/images/menu/catalogue/21-21st-birthday-blue-key.jpg"
+  },
+  {
+    "name": "1st Birthday Cake (Baby Boy Number One)",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=1st-birthday-baby-boy-number-one",
+    "price": "SGD $258 (Min 3kg)",
+    "image": "/images/menu/catalogue/22-1st-birthday-baby-boy-number-one.jpg"
+  },
+  {
+    "name": "1st Birthday Cake (Baby Girl Number One)",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=1st-birthday-baby-girl-number-one",
+    "price": "SGD $258 (Min 3kg)",
+    "image": "/images/menu/catalogue/23-1st-birthday-baby-girl-number-one.jpg"
+  },
+  {
+    "name": "1st Birthday Cake (Round)",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=1st-birthday-round",
+    "price": "SGD $198 (Min 2kg)",
+    "image": "/images/menu/catalogue/24-1st-birthday-round.jpg"
+  },
+  {
+    "name": "1st Birthday Cake (2-tier, round)",
+    "category": "Custom Cake",
+    "url": "https://barcookbakery.com/site/?product=1st-birthday-2-tiers-round",
+    "price": "SGD $268 (Min 3kg)",
+    "image": "/images/menu/catalogue/25-1st-birthday-2-tiers-round.jpg"
+  },
+  {
+    "name": "White Toast",
+    "category": "Toast",
+    "url": "https://barcookbakery.com/site/?product=white-toast",
+    "image": "/images/menu/catalogue/26-white-toast.jpg"
+  },
+  {
+    "name": "Raisin Cream",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=raisin-cream",
+    "image": "/images/menu/catalogue/27-raisin-cream.jpg"
+  },
+  {
+    "name": "Mixberry Cheese",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=mixberry-cheese",
+    "image": "/images/menu/catalogue/28-mixberry-cheese.jpg"
+  },
+  {
+    "name": "Mash Potato Nachos",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=mash-potato-nachos",
+    "image": "/images/menu/catalogue/29-mash-potato-nachos.jpg"
+  },
+  {
+    "name": "Walnut Cheese Bread",
+    "category": "Signature & Best Seller",
+    "url": "https://barcookbakery.com/site/?product=walnut-cheese-bread",
+    "image": "/images/menu/catalogue/30-walnut-cheese-bread.jpg"
+  },
+  {
+    "name": "Curry Guy",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=curry-guy",
+    "image": "/images/menu/catalogue/31-curry-guy.jpg"
+  },
+  {
+    "name": "Mini Baguette",
+    "category": "European Bread",
+    "url": "https://barcookbakery.com/site/?product=mini-baguette",
+    "image": "/images/menu/catalogue/32-mini-baguette.jpg"
+  },
+  {
+    "name": "Baguette",
+    "category": "European Bread",
+    "url": "https://barcookbakery.com/site/?product=baguette",
+    "image": "/images/menu/catalogue/33-baguette.jpg"
+  },
+  {
+    "name": "Tomato and Ham",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=tomato-and-ham",
+    "image": "/images/menu/catalogue/34-tomato-and-ham.jpg"
+  },
+  {
+    "name": "Chicken Curry Sauce",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=chicken-curry-sauce",
+    "image": "/images/menu/catalogue/35-chicken-curry-sauce.jpg"
+  },
+  {
+    "name": "Hawaiian Pizza",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=hawaiian-pizza",
+    "image": "/images/menu/catalogue/36-hawaiian-pizza.jpg"
+  },
+  {
+    "name": "Choz Banana",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=choz-banana",
+    "image": "/images/menu/catalogue/37-choz-banana.jpg"
+  },
+  {
+    "name": "BBQ Bun",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=bbq-bun",
+    "image": "/images/menu/catalogue/38-bbq-bun.jpg"
+  },
+  {
+    "name": "Tuna Bun",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=tuna-bun",
+    "image": "/images/menu/catalogue/39-tuna-bun.jpg"
+  },
+  {
+    "name": "Coffee Raisin",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=coffee-raisin",
+    "image": "/images/menu/catalogue/40-coffee-raisin.jpg"
+  },
+  {
+    "name": "Almond & Choc",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=almond-and-choc",
+    "image": "/images/menu/catalogue/41-almond-and-choc.jpg"
+  },
+  {
+    "name": "Cheese Croissant",
+    "category": "Croissant & Danish",
+    "url": "https://barcookbakery.com/site/?product=cheese-croissant",
+    "image": "/images/menu/catalogue/42-cheese-croissant.jpg"
+  },
+  {
+    "name": "Dark Chocolate Cranberry",
+    "category": "European Bread",
+    "url": "https://barcookbakery.com/site/?product=dark-chocolate-cranberry",
+    "image": "/images/menu/catalogue/43-dark-chocolate-cranberry.jpg"
+  },
+  {
+    "name": "Dark Chocolate Hazelnut",
+    "category": "European Bread",
+    "url": "https://barcookbakery.com/site/?product=dark-chocolate-hazelnut",
+    "image": "/images/menu/catalogue/44-dark-chocolate-hazelnut.jpg"
+  },
+  {
+    "name": "Dark Chocolate",
+    "category": "European Bread",
+    "url": "https://barcookbakery.com/site/?product=dark-chocolate",
+    "image": "/images/menu/catalogue/45-dark-chocolate.jpg"
+  },
+  {
+    "name": "Sausage Croissant",
+    "category": "Croissant & Danish",
+    "url": "https://barcookbakery.com/site/?product=sausage-croissant",
+    "image": "/images/menu/catalogue/46-sausage-croissant.jpg"
+  },
+  {
+    "name": "Chocolate Croissant",
+    "category": "Croissant & Danish",
+    "url": "https://barcookbakery.com/site/?product=chocolate-croissant",
+    "image": "/images/menu/catalogue/47-chocolate-croissant.jpg"
+  },
+  {
+    "name": "Ham & Cheese Croissant",
+    "category": "Croissant & Danish",
+    "url": "https://barcookbakery.com/site/?product=ham-cheese-croissant",
+    "image": "/images/menu/catalogue/48-ham-cheese-croissant.jpg"
+  },
+  {
+    "name": "Coffee Bun",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=coffee-bun",
+    "image": "/images/menu/catalogue/49-coffee-bun.jpg"
+  },
+  {
+    "name": "Mexi Cheese",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=mexi-cheese",
+    "image": "/images/menu/catalogue/50-mexi-cheese.jpg"
+  },
+  {
+    "name": "Butter Sugar",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=butter-sugar",
+    "image": "/images/menu/catalogue/51-butter-sugar.jpg"
+  },
+  {
+    "name": "Otah Cheese",
+    "category": "Bun",
+    "url": "https://barcookbakery.com/site/?product=otah-cheese",
+    "image": "/images/menu/catalogue/52-otah-cheese.jpg"
+  },
+  {
+    "name": "German Muesli",
+    "category": "Signature & Best Seller",
+    "url": "https://barcookbakery.com/site/?product=german-muesli",
+    "image": "/images/menu/catalogue/53-german-muesli.jpg"
+  },
+  {
+    "name": "Croissant",
+    "category": "Croissant & Danish",
+    "url": "https://barcookbakery.com/site/?product=croissant",
+    "image": "/images/menu/catalogue/54-croissant.jpg"
+  }
+]

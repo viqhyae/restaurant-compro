@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import products from "../data/products.json";
 import { motion, MotionConfig, useScroll, useTransform, useReducedMotion, useMotionValueEvent } from "framer-motion";
 import {
   ArrowRight,
@@ -22,71 +23,15 @@ const navItems = [
   { label: "Visit", href: "#visit" },
 ];
 
-const signatureMenu = [
-  {
-    name: "Raisin Cream",
-    category: "Signature Bun",
-    description: "Cottony-soft bread filled with silky cream cheese and juicy raisins.",
-    availability: "Barcook Signature",
-    image:
-      "/images/menu/official/raisin-cream.jpg",
-  },
-  {
-    name: "Shio Pan",
-    category: "Japanese-style Bread",
-    description: "A lightly salted crust with a chewy, buttery centre, best enjoyed warm.",
-    availability: "Available in store",
-    image:
-      "/images/menu/official/shio-pan.jpg",
-  },
-  {
-    name: "Mixberry Cheese",
-    category: "Best Seller",
-    description: "Blueberries, cranberries and tangy cream cheese in a soft baked bun.",
-    availability: "Available in store",
-    image:
-      "/images/menu/official/mixberry-cheese.jpg",
-  },
-  {
-    name: "Mash Potato Nachos",
-    category: "Best Seller",
-    description: "Creamy mashed potato finished with smooth, savoury nachos cheese.",
-    availability: "Available in store",
-    image:
-      "/images/menu/official/mash-potato-nachos.jpg",
-  },
-  {
-    name: "Walnut Cheese Bread",
-    category: "Best Seller",
-    description: "Soft, chewy bread pairing crunchy walnuts with savoury cheese.",
-    availability: "Available in store",
-    image:
-      "/images/menu/official/walnut-cheese-bread.jpg",
-  },
-  {
-    name: "German Muesli",
-    category: "Signature Bread",
-    description: "Wholemeal bread with seeds, oats, raisins and walnuts for a hearty bite.",
-    availability: "Available in store",
-    image:
-      "/images/menu/official/german-muesli.jpg",
-  },
-  {
-    name: "Chocolate Croissant",
-    category: "Croissant",
-    description: "French-butter pastry with chocolate, a flaky shell and delicate moist layers.",
-    availability: "Available in store",
-    image:
-      "/images/menu/official/chocolate-croissant.jpg",
-  },
-  {
-    name: "Carrot Cake",
-    category: "Classic Cake",
-    description: "A Barcook signature selection from the bakery's classic cake collection.",
-    availability: "Available in store",
-    image:
-      "/images/menu/official/carrot-cake.jpg",
-  },
+const productCategories = [
+  "All",
+  "Bun",
+  "Classic Cake",
+  "Croissant & Danish",
+  "European Bread",
+  "Toast",
+  "Signature & Best Seller",
+  "Custom Cake",
 ];
 
 const experiences = [
@@ -171,6 +116,7 @@ const fadeUp = {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [productCategory, setProductCategory] = useState("All");
   const reducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 900], [0, 140]);
@@ -369,9 +315,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <div>
-              <p className="section-kicker">Signature Menu</p>
+              <p className="section-kicker">Product Catalogue</p>
               <h2 className="mt-4 max-w-3xl font-serif text-5xl leading-tight md:text-7xl">
-                Freshly made. Thoughtfully served.
+                The official Barcook collection.
               </h2>
             </div>
             <a
@@ -384,10 +330,36 @@ export default function Home() {
             </a>
           </div>
 
-          <div id="menu-products" className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {signatureMenu.map((item, index) => (
+          <div className="mt-10 flex flex-wrap gap-2" aria-label="Product categories">
+            {productCategories.map((category) => (
+              <button
+                key={category}
+                type="button"
+                aria-pressed={productCategory === category}
+                onClick={() => setProductCategory(category)}
+                className={`border px-4 py-2 text-sm transition ${
+                  productCategory === category
+                    ? "border-[#164f3b] bg-[#164f3b] text-white"
+                    : "border-[#c5c7c4] text-[#164f3b] hover:border-[#164f3b]"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <p className="mt-5 text-sm text-[#62655f]" aria-live="polite">
+            {productCategory === "All"
+              ? `${products.length} products`
+              : `${products.filter((item) => item.category === productCategory).length} products in ${productCategory}`}
+          </p>
+
+          <div id="menu-products" className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {products
+              .filter((item) => productCategory === "All" || item.category === productCategory)
+              .map((item, index) => (
               <motion.article
-                key={item.name}
+                key={item.url}
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
@@ -411,12 +383,19 @@ export default function Home() {
                   <h3 className="mt-3 font-serif text-2xl leading-tight">
                     {item.name}
                   </h3>
-                  <p className="mt-3 min-h-20 text-sm leading-6 text-[#62655f]">
-                    {item.description}
-                  </p>
-                  <p className="mt-5 text-lg font-semibold text-[#164f3b]">
-                    {item.availability}
-                  </p>
+                  {item.price && (
+                    <p className="mt-3 text-sm leading-6 text-[#62655f]">
+                      {item.price}
+                    </p>
+                  )}
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#164f3b]"
+                  >
+                    View details <ArrowRight size={16} />
+                  </a>
                 </div>
               </motion.article>
             ))}
