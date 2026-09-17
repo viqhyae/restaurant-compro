@@ -488,33 +488,39 @@ export default function Home() {
       </section>
 
       <section id="baking-advisor" className="scroll-mt-20 bg-[#e8e2d7] px-5 py-24 md:px-10 md:py-32">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{ duration: 0.7 }}
-            className="relative min-h-[520px] overflow-hidden bg-white md:min-h-[680px]"
-          >
-            <Image
-              src="/images/baking-advisor/chef-lin.png"
-              alt="Chef Lin, Barcook chief baking adviser"
-              fill
-              sizes="(min-width: 1024px) 42vw, 100vw"
-              className="object-cover object-top"
-            />
-          </motion.div>
+        <div className="mx-auto max-w-7xl">
+          <div className="relative grid overflow-hidden bg-white lg:min-h-[720px] lg:grid-cols-[0.92fr_1.08fr]">
+            <div className="relative min-h-[580px] overflow-hidden bg-[#164f3b] lg:min-h-full lg:overflow-visible">
+              <div className="absolute left-6 top-7 z-10 max-w-52 text-white md:left-10 md:top-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/65">Chief Baking Advisor</p>
+                <p className="mt-3 font-serif text-3xl leading-tight">Craft built through discipline.</p>
+              </div>
+              <div className="absolute -bottom-6 left-1/2 h-[500px] w-[390px] -translate-x-1/2 md:h-[590px] md:w-[460px] lg:-bottom-10 lg:left-[57%] lg:h-[660px] lg:w-[520px]">
+                <Image
+                  src="/images/baking-advisor/chef-lin-cutout.png"
+                  alt="Chef Lin, Barcook chief baking adviser"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-contain object-bottom drop-shadow-[0_24px_30px_rgba(0,0,0,0.2)]"
+                />
+              </div>
+              <div className="absolute bottom-6 left-6 z-10 border-l border-white/45 pl-4 text-white md:bottom-10 md:left-10">
+                <p className="font-serif text-4xl">林育德师傅</p>
+                <p className="mt-1 text-xs uppercase tracking-[0.18em] text-white/65">Taichung / Taiwan</p>
+              </div>
+            </div>
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: 0.1, duration: 0.7 }}
+            className="relative flex flex-col justify-center px-7 py-14 md:px-14 lg:px-16 lg:py-20"
           >
             <p className="section-kicker">Baking Advisor</p>
-            <h2 className="mt-4 font-serif text-6xl leading-none md:text-8xl">Chef Lin</h2>
-            <p className="mt-3 text-xl text-[#164f3b]">林育德师傅</p>
+            <h2 className="mt-4 font-serif text-6xl leading-none md:text-8xl lg:-ml-24 lg:text-9xl">
+              <span className="relative z-20 bg-white px-0 lg:px-6">Chef Lin</span>
+            </h2>
             <p className="mt-8 max-w-2xl text-xl leading-9 text-[#444844]">
               Chef Lin is Barcook&apos;s chief baking adviser and a protégé of highly regarded Japanese bread master Mr Nogami. After training under Mr Nogami for nine years, he built more than twelve years of professional baking experience.
             </p>
@@ -532,25 +538,6 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-        </div>
-        <div className="mx-auto mt-16 max-w-7xl">
-          <div className="mb-7 flex items-end justify-between gap-6">
-            <h3 className="font-serif text-4xl md:text-5xl">Stories of the craft</h3>
-            <p className="hidden max-w-sm text-right leading-7 text-[#5f625e] md:block">Two television features about traditional baking and the mentor-apprentice relationship behind the bread.</p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <div className="aspect-video overflow-hidden bg-[#0d3026]">
-                <iframe className="h-full w-full" src="https://www.youtube-nocookie.com/embed/jouVgprhc8w" title="Chef Lin traditional scallion bread feature" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-              </div>
-              <p className="mt-4 font-serif text-2xl">Traditional scallion bread</p>
-            </div>
-            <div>
-              <div className="aspect-video overflow-hidden bg-[#0d3026]">
-                <iframe className="h-full w-full" src="https://www.youtube-nocookie.com/embed/CVCzmQsg5ak" title="Chef Lin mentor and apprentice story" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-              </div>
-              <p className="mt-4 font-serif text-2xl">A mentor, an apprentice, and bread</p>
-            </div>
           </div>
         </div>
       </section>
