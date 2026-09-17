@@ -127,6 +127,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [productCategory, setProductCategory] = useState("All");
+  const [visibleProductCount, setVisibleProductCount] = useState(8);
   const [selectedProduct, setSelectedProduct] = useState<(typeof products)[number] | null>(null);
   const reducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
@@ -345,7 +346,10 @@ export default function Home() {
                 key={category}
                 type="button"
                 aria-pressed={productCategory === category}
-                onClick={() => setProductCategory(category)}
+                onClick={() => {
+                  setProductCategory(category);
+                  setVisibleProductCount(8);
+                }}
                 className={`border px-4 py-2 text-sm transition ${
                   productCategory === category
                     ? "border-[#164f3b] bg-[#164f3b] text-white"
@@ -366,6 +370,7 @@ export default function Home() {
           <div id="menu-products" className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {products
               .filter((item) => productCategory === "All" || item.category === productCategory)
+              .slice(0, visibleProductCount)
               .map((item, index) => (
               <motion.article
                 key={item.url}
@@ -408,6 +413,33 @@ export default function Home() {
               </motion.article>
             ))}
           </div>
+
+          {visibleProductCount < products.filter((item) => productCategory === "All" || item.category === productCategory).length && (
+            <div className="mt-12 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setVisibleProductCount((count) => count + 8)}
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-[#164f3b] px-7 text-sm font-semibold text-[#164f3b] transition hover:bg-[#164f3b] hover:text-white"
+              >
+                Load more products <ArrowRight size={17} />
+              </button>
+            </div>
+          )}
+
+          {visibleProductCount > 8 && (
+            <div className="mt-4 flex justify-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setVisibleProductCount(8);
+                  document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="px-4 py-2 text-sm font-semibold text-[#62655f] underline decoration-[#b8b9b4] underline-offset-4 hover:text-[#164f3b]"
+              >
+                Show fewer products
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
