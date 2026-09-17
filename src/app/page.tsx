@@ -91,26 +91,30 @@ const signatureMenu = [
 
 const experiences = [
   {
-    title: "Bakery",
-    text: "Freshly baked bread and pastries displayed with gallery-like care.",
+    title: "The Bakery",
+    text: "A dedication to the simple goodness of a bun and the everyday pleasure of bread made with care.",
+    href: "https://barcookbakery.com/site/?product_types=all-products",
     image:
       "/images/photo-1608198093002-ad4e005484ec-1100.jpg",
   },
   {
-    title: "Cafe",
-    text: "Coffee, crafted drinks, and casual dining for slower city hours.",
+    title: "Baking Craft",
+    text: "Chief baking adviser Chef Lin trained for nine years under Japanese bread master Mr Nogami.",
+    href: "https://barcookbakery.com/site/?page_id=799",
     image:
       "/images/photo-1501339847302-ac426a4a7cbb-1100.jpg",
   },
   {
-    title: "Gallery",
-    text: "Architecture, natural light, and interior details made to linger.",
+    title: "Custom Cakes",
+    text: "Special cake designs are available by advance order. Lead times, availability and outlet terms apply.",
+    href: "https://barcookbakery.com/site/?page_id=535",
     image:
       "/images/photo-1554118811-1e0d58224f24-1100.jpg",
   },
   {
-    title: "Experience",
-    text: "A place to meet, dine, work, and spend time beyond the plate.",
+    title: "Join Barcook",
+    text: "Barcook welcomes energetic people who want to build practical skills as part of the Barcook family.",
+    href: "https://barcookbakery.com/site/?page_id=450",
     image:
       "/images/photo-1517248135467-4c7edcad34c4-1100.jpg",
   },
@@ -311,16 +315,16 @@ export default function Home() {
             className="grid gap-7"
           >
             <p className="max-w-3xl text-xl leading-9 text-[#4a4d49]">
-              Barcook began with a belief that quality and freshness are the key
-              ingredients of truly great bread. At Barcook Gallery, freshly
-              prepared breads, buns, croissants and cakes meet a welcoming space
-              in the heart of Petaling Jaya.
+              Barcook is built on a passion for perfection and a dedication to
+              the simple goodness of a bun: one of life&apos;s small pleasures
+              that is always worth making time for. At Barcook Gallery, this
+              belief meets a welcoming space in the heart of Petaling Jaya.
             </p>
             <p className="max-w-3xl text-lg leading-8 text-[#5f625e]">
-              Baking continues throughout the day, so favourites can be enjoyed
-              warm and close to their original flavour. From the signature Raisin
-              Cream to Shio Pan and savoury buns, every visit offers something
-              familiar alongside something new.
+              The bakery stays true to honest craft while finding the
+              extraordinary in the ordinary. From the signature Raisin Cream to
+              Shio Pan, croissants and classic cakes, the range brings together
+              familiar comfort and thoughtful baking.
             </p>
           </motion.div>
         </div>
@@ -428,14 +432,17 @@ export default function Home() {
           <div className="max-w-4xl">
             <p className="section-kicker text-[#c5c7c4]">Barcook Experience</p>
             <h2 className="mt-4 font-serif text-5xl leading-tight md:text-7xl">
-              Bakery, cafe, gallery, and time well spent.
+              Skill, care, and the people behind every bake.
             </h2>
           </div>
 
           <div className="mt-14 grid gap-5 md:grid-cols-4">
             {experiences.map((item, index) => (
-              <motion.article
+              <motion.a
                 key={item.title}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
@@ -457,7 +464,7 @@ export default function Home() {
                     {item.text}
                   </p>
                 </div>
-              </motion.article>
+              </motion.a>
             ))}
           </div>
         </div>
@@ -596,12 +603,13 @@ export default function Home() {
             <p className="mt-2 text-white/65">Petaling Jaya, Malaysia</p>
             </div>
           </div>
-          <div className="flex gap-5 text-sm uppercase tracking-[0.18em] text-white/70">
-            <a href="https://www.instagram.com/barcook_my/">Instagram</a>
-            <a href="https://barcookbakery.com/site/?outlet=barcook-gallery">Official Site</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Barcook+Gallery+SS5+Petaling+Jaya">
-              Google Maps
-            </a>
+          <div className="flex max-w-xl flex-wrap gap-x-5 gap-y-3 text-sm uppercase tracking-[0.18em] text-white/70">
+            <a href="https://barcookbakery.com/site/?page_id=1068" target="_blank" rel="noopener noreferrer">Locations</a>
+            <a href="https://barcookbakery.com/site/?product_types=all-products" target="_blank" rel="noopener noreferrer">Products</a>
+            <a href="https://barcookbakery.com/site/?page_id=799" target="_blank" rel="noopener noreferrer">Baking Advisor</a>
+            <a href="https://barcookbakery.com/site/?page_id=535" target="_blank" rel="noopener noreferrer">Order</a>
+            <a href="https://barcookbakery.com/site/?page_id=1136" target="_blank" rel="noopener noreferrer">Contact</a>
+            <a href="https://barcookbakery.com/site/?page_id=450" target="_blank" rel="noopener noreferrer">Join Us</a>
           </div>
           <p className="text-sm text-white/50">(c) Barcook Gallery</p>
         </div>
