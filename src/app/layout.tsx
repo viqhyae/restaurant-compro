@@ -16,7 +16,7 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "Barcook Gallery | Bakery. Cafe. Gallery.",
   description:
-    "Premium one-page company profile concept for Barcook Gallery in Petaling Jaya, Malaysia.",
+    "Discover freshly prepared breads, signature buns, croissants and cakes at Barcook Gallery in Petaling Jaya, Malaysia.",
   metadataBase: new URL("https://barcook-gallery.vercel.app"),
   alternates: {
     canonical: "/",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Barcook Gallery",
     description:
-      "Where freshly baked creations, crafted drinks and thoughtful spaces come together.",
+      "Freshly prepared breads, signature buns, croissants and cakes in Petaling Jaya.",
     type: "website",
     locale: "en_MY",
   },

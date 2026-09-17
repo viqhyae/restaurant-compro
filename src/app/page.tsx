@@ -8,6 +8,7 @@ import {
   Clock3,
   Coffee,
   ExternalLink,
+  Mail,
   MapPin,
   Menu,
   X,
@@ -23,68 +24,68 @@ const navItems = [
 
 const signatureMenu = [
   {
-    name: "Sourdough Country Loaf",
-    category: "Bakery",
-    description: "Slow-fermented crust, tender crumb, baked for the table.",
-    price: "RM 18",
+    name: "Raisin Cream",
+    category: "Signature Bun",
+    description: "Cottony-soft bread filled with silky cream cheese and juicy raisins.",
+    availability: "Barcook Signature",
     image:
-      "/images/photo-1509440159596-0249088772ff-900.jpg",
+      "/images/menu/official/raisin-cream.jpg",
   },
   {
-    name: "Butter Croissant",
-    category: "Pastry",
-    description: "Laminated layers with a crisp shell and soft butter finish.",
-    price: "RM 12",
+    name: "Shio Pan",
+    category: "Japanese-style Bread",
+    description: "A lightly salted crust with a chewy, buttery centre, best enjoyed warm.",
+    availability: "Available in store",
     image:
-      "/images/photo-1555507036-ab1f4038808a-900.jpg",
+      "/images/menu/official/shio-pan.jpg",
   },
   {
-    name: "Yuzu Cloud Coffee",
-    category: "Signature Drink",
-    description: "A citrus-led coffee drink with a light, creamy top.",
-    price: "RM 16",
+    name: "Mixberry Cheese",
+    category: "Best Seller",
+    description: "Blueberries, cranberries and tangy cream cheese in a soft baked bun.",
+    availability: "Available in store",
     image:
-      "/images/photo-1495474472287-4d71bcdd2085-900.jpg",
+      "/images/menu/official/mixberry-cheese.jpg",
   },
   {
-    name: "Passion Espresso Soda",
-    category: "Coffee",
-    description: "Bright passion fruit, espresso depth, and sparkling lift.",
-    price: "RM 15",
+    name: "Mash Potato Nachos",
+    category: "Best Seller",
+    description: "Creamy mashed potato finished with smooth, savoury nachos cheese.",
+    availability: "Available in store",
     image:
-      "/images/photo-1622483767028-3f66f32aef97-900.jpg",
+      "/images/menu/official/mash-potato-nachos.jpg",
   },
   {
-    name: "Smoked Chicken Tartine",
-    category: "Main Dish",
-    description: "Open-faced bakery toast with greens and savoury richness.",
-    price: "RM 28",
+    name: "Walnut Cheese Bread",
+    category: "Best Seller",
+    description: "Soft, chewy bread pairing crunchy walnuts with savoury cheese.",
+    availability: "Available in store",
     image:
-      "/images/photo-1528735602780-2552fd46c7af-900.jpg",
+      "/images/menu/official/walnut-cheese-bread.jpg",
   },
   {
-    name: "Mushroom Cream Pasta",
-    category: "Main Dish",
-    description: "Cafe comfort plated with clean lines and earthy notes.",
-    price: "RM 30",
+    name: "German Muesli",
+    category: "Signature Bread",
+    description: "Wholemeal bread with seeds, oats, raisins and walnuts for a hearty bite.",
+    availability: "Available in store",
     image:
-      "/images/photo-1473093295043-cdd812d0e601-900.jpg",
+      "/images/menu/official/german-muesli.jpg",
   },
   {
-    name: "Berry Cream Danish",
-    category: "Dessert",
-    description: "Fruit, custard, and pastry in an elegant bakery bite.",
-    price: "RM 14",
+    name: "Chocolate Croissant",
+    category: "Croissant",
+    description: "French-butter pastry with chocolate, a flaky shell and delicate moist layers.",
+    availability: "Available in store",
     image:
-      "/images/photo-1519915028121-7d3463d20b13-900.jpg",
+      "/images/menu/official/chocolate-croissant.jpg",
   },
   {
-    name: "Chocolate Gallery Cake",
-    category: "Dessert",
-    description: "A rich slice built for slow coffee and quiet corners.",
-    price: "RM 20",
+    name: "Carrot Cake",
+    category: "Classic Cake",
+    description: "A Barcook signature selection from the bakery's classic cake collection.",
+    availability: "Available in store",
     image:
-      "/images/photo-1578985545062-69928b1d9587-900.jpg",
+      "/images/menu/official/carrot-cake.jpg",
   },
 ];
 
@@ -253,8 +254,8 @@ export default function Home() {
               Bakery. Café. Gallery.
             </p>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78 md:text-xl">
-              Where freshly baked creations, crafted drinks and thoughtful
-              spaces come together.
+              Freshly prepared breads, pastries and cakes, served throughout
+              the day at Barcook Gallery in Petaling Jaya.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <a
@@ -310,15 +311,16 @@ export default function Home() {
             className="grid gap-7"
           >
             <p className="max-w-3xl text-xl leading-9 text-[#4a4d49]">
-              Barcook Gallery brings fresh bakery, coffee, food, contemporary
-              space, and lifestyle rhythm into one considered destination. It is
-              designed for people who come for a pastry, stay for the atmosphere,
-              and remember the details.
+              Barcook began with a belief that quality and freshness are the key
+              ingredients of truly great bread. At Barcook Gallery, freshly
+              prepared breads, buns, croissants and cakes meet a welcoming space
+              in the heart of Petaling Jaya.
             </p>
             <p className="max-w-3xl text-lg leading-8 text-[#5f625e]">
-              From the first coffee of the morning to a shared afternoon treat,
-              discover thoughtfully crafted flavours and a welcoming space to
-              slow down, gather, and enjoy the everyday.
+              Baking continues throughout the day, so favourites can be enjoyed
+              warm and close to their original flavour. From the signature Raisin
+              Cream to Shio Pan and savoury buns, every visit offers something
+              familiar alongside something new.
             </p>
           </motion.div>
         </div>
@@ -369,7 +371,9 @@ export default function Home() {
               </h2>
             </div>
             <a
-              href="#menu-products"
+              href="https://barcookbakery.com/site/?product_types=all-products"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex w-fit items-center gap-2 border-b border-[#164f3b] pb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#164f3b]"
             >
               Explore Our Menu <ArrowRight size={17} />
@@ -407,7 +411,7 @@ export default function Home() {
                     {item.description}
                   </p>
                   <p className="mt-5 text-lg font-semibold text-[#164f3b]">
-                    {item.price}
+                    {item.availability}
                   </p>
                 </div>
               </motion.article>
@@ -519,8 +523,7 @@ export default function Home() {
             <div className="mt-8 grid gap-5 text-white/84">
               <p className="flex gap-3 text-lg leading-8">
                 <MapPin className="mt-1 shrink-0" size={22} />
-                4 & 6, Jln SS 5B/2, SS 5, 47301 Petaling Jaya, Selangor,
-                Malaysia
+                Jln SS 5B/2, SS 5, 47301 Petaling Jaya, Selangor, Malaysia
               </p>
               <p className="flex gap-3 text-lg leading-8">
                 <Clock3 className="mt-1 shrink-0" size={22} />
@@ -528,7 +531,13 @@ export default function Home() {
               </p>
               <p className="flex gap-3 text-lg leading-8">
                 <Coffee className="mt-1 shrink-0" size={22} />
-                Bakery, coffee, casual dining, and gallery-inspired spaces.
+                Fresh breads, buns, croissants, cakes and bakery favourites.
+              </p>
+              <p className="flex gap-3 text-lg leading-8">
+                <Mail className="mt-1 shrink-0" size={22} />
+                <a href="mailto:infobarcook@gmail.com" className="hover:text-white">
+                  infobarcook@gmail.com
+                </a>
               </p>
             </div>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -589,6 +598,7 @@ export default function Home() {
           </div>
           <div className="flex gap-5 text-sm uppercase tracking-[0.18em] text-white/70">
             <a href="https://www.instagram.com/barcook_my/">Instagram</a>
+            <a href="https://barcookbakery.com/site/?outlet=barcook-gallery">Official Site</a>
             <a href="https://www.google.com/maps/search/?api=1&query=Barcook+Gallery+SS5+Petaling+Jaya">
               Google Maps
             </a>
