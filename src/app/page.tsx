@@ -487,15 +487,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="baking-advisor" className="scroll-mt-20 bg-[#e8e2d7] px-5 py-24 md:px-10 md:py-32">
+      <section id="baking-advisor" className="scroll-mt-20 bg-[#e8e2d7] px-5 py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="relative grid overflow-hidden bg-white lg:min-h-[720px] lg:grid-cols-[0.92fr_1.08fr]">
-            <div className="relative min-h-[580px] overflow-hidden bg-[#164f3b] lg:min-h-full lg:overflow-visible">
+          <div className="relative grid overflow-hidden bg-white lg:min-h-[560px] lg:grid-cols-[0.92fr_1.08fr]">
+            <div className="relative min-h-[460px] overflow-hidden bg-[#164f3b] lg:min-h-full lg:overflow-visible">
               <div className="absolute left-6 top-7 z-10 max-w-52 text-white md:left-10 md:top-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/65">Chief Baking Advisor</p>
                 <p className="mt-3 font-serif text-3xl leading-tight">Craft built through discipline.</p>
               </div>
-              <div className="absolute -bottom-6 left-1/2 h-[500px] w-[390px] -translate-x-1/2 md:h-[590px] md:w-[460px] lg:-bottom-10 lg:left-[57%] lg:h-[660px] lg:w-[520px]">
+              <div className="absolute -bottom-6 left-1/2 h-[410px] w-[320px] -translate-x-1/2 md:h-[450px] md:w-[360px] lg:-bottom-8 lg:left-[57%] lg:h-[510px] lg:w-[410px]">
                 <Image
                   src="/images/baking-advisor/chef-lin-cutout.png"
                   alt="Chef Lin, Barcook chief baking adviser"
@@ -515,25 +515,25 @@ export default function Home() {
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
             transition={{ delay: 0.1, duration: 0.7 }}
-            className="relative flex flex-col justify-center px-7 py-14 md:px-14 lg:px-16 lg:py-20"
+            className="relative flex flex-col justify-center px-7 py-12 md:px-12 lg:px-14 lg:py-12"
           >
             <p className="section-kicker">Baking Advisor</p>
-            <h2 className="mt-4 font-serif text-6xl leading-none md:text-8xl lg:-ml-24 lg:text-9xl">
+            <h2 className="mt-3 font-serif text-6xl leading-none md:text-7xl lg:-ml-20 lg:text-8xl">
               <span className="relative z-20 bg-white px-0 lg:px-6">Chef Lin</span>
             </h2>
-            <p className="mt-8 max-w-2xl text-xl leading-9 text-[#444844]">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#444844]">
               Chef Lin is Barcook&apos;s chief baking adviser and a protégé of highly regarded Japanese bread master Mr Nogami. After training under Mr Nogami for nine years, he built more than twelve years of professional baking experience.
             </p>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5f625e]">
+            <p className="mt-4 max-w-2xl text-base leading-7 text-[#5f625e]">
               He is the chef-owner of Boulangerie Le Bois in Taichung, Taiwan, and has also served as chief baking adviser to Shanghai BF + Café. His discipline and technical knowledge continue to shape Barcook&apos;s breads, textures and everyday baking standards.
             </p>
-            <div className="mt-10 grid grid-cols-2 border-y border-[#bcb5a9] py-7">
+            <div className="mt-7 grid grid-cols-2 border-y border-[#bcb5a9] py-5">
               <div className="border-r border-[#bcb5a9] pr-6">
-                <p className="font-serif text-5xl text-[#164f3b]">9 years</p>
+                <p className="font-serif text-4xl text-[#164f3b]">9 years</p>
                 <p className="mt-2 text-sm uppercase tracking-[0.16em] text-[#686b66]">Training under Mr Nogami</p>
               </div>
               <div className="pl-6">
-                <p className="font-serif text-5xl text-[#164f3b]">12+ years</p>
+                <p className="font-serif text-4xl text-[#164f3b]">12+ years</p>
                 <p className="mt-2 text-sm uppercase tracking-[0.16em] text-[#686b66]">Baking experience</p>
               </div>
             </div>
