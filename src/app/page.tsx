@@ -38,28 +38,28 @@ const experiences = [
   {
     title: "The Bakery",
     text: "A dedication to the simple goodness of a bun and the everyday pleasure of bread made with care.",
-    href: "https://barcookbakery.com/site/?product_types=all-products",
+    href: "#menu",
     image:
       "/images/photo-1608198093002-ad4e005484ec-1100.jpg",
   },
   {
     title: "Baking Craft",
     text: "Chief baking adviser Chef Lin trained for nine years under Japanese bread master Mr Nogami.",
-    href: "https://barcookbakery.com/site/?page_id=799",
+    href: "#baking-advisor",
     image:
       "/images/photo-1501339847302-ac426a4a7cbb-1100.jpg",
   },
   {
     title: "Custom Cakes",
     text: "Special cake designs are available by advance order. Lead times, availability and outlet terms apply.",
-    href: "https://barcookbakery.com/site/?page_id=535",
+    href: "#order",
     image:
       "/images/photo-1554118811-1e0d58224f24-1100.jpg",
   },
   {
     title: "Join Barcook",
     text: "Barcook welcomes energetic people who want to build practical skills as part of the Barcook family.",
-    href: "https://barcookbakery.com/site/?page_id=450",
+    href: "#join-us",
     image:
       "/images/photo-1517248135467-4c7edcad34c4-1100.jpg",
   },
@@ -108,6 +108,16 @@ const gallery = [
   },
 ];
 
+const productDescriptions: Record<string, string> = {
+  Bun: "A soft Barcook bun prepared for a satisfying everyday bite.",
+  "Classic Cake": "A familiar cake favourite made for sharing and celebrations.",
+  "Custom Cake": "Made to order for special occasions. Advance notice and final availability apply.",
+  "Croissant & Danish": "A layered pastry baked until crisp, light and golden.",
+  "European Bread": "A rustic loaf with a satisfying crust and characterful crumb.",
+  "Signature & Best Seller": "One of Barcook's signature favourites, loved by regular guests.",
+  Toast: "A versatile everyday loaf with a soft, even crumb.",
+};
+
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0 },
@@ -117,6 +127,7 @@ export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [productCategory, setProductCategory] = useState("All");
+  const [selectedProduct, setSelectedProduct] = useState<(typeof products)[number] | null>(null);
   const reducedMotion = useReducedMotion();
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 900], [0, 140]);
@@ -321,9 +332,7 @@ export default function Home() {
               </h2>
             </div>
             <a
-              href="https://barcookbakery.com/site/?product_types=all-products"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#menu-products"
               className="inline-flex w-fit items-center gap-2 border-b border-[#164f3b] pb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#164f3b]"
             >
               Explore Our Menu <ArrowRight size={17} />
@@ -388,14 +397,13 @@ export default function Home() {
                       {item.price}
                     </p>
                   )}
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProduct(item)}
                     className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#164f3b]"
                   >
                     View details <ArrowRight size={16} />
-                  </a>
+                  </button>
                 </div>
               </motion.article>
             ))}
@@ -420,8 +428,6 @@ export default function Home() {
               <motion.a
                 key={item.title}
                 href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
@@ -445,6 +451,36 @@ export default function Home() {
                 </div>
               </motion.a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="information" className="bg-white px-5 py-24 md:px-10 md:py-32">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <p className="section-kicker">Plan Your Visit</p>
+            <h2 className="mt-4 font-serif text-5xl leading-tight md:text-7xl">
+              Everything you need, right here.
+            </h2>
+          </div>
+          <div className="mt-14 grid border-y border-[#d9d5cb] md:grid-cols-3">
+            <article id="baking-advisor" className="scroll-mt-24 border-b border-[#d9d5cb] py-10 md:border-b-0 md:border-r md:px-8 md:first:pl-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a77b55]">Baking Advisor</p>
+              <h3 className="mt-4 font-serif text-4xl">Craft guided by experience.</h3>
+              <p className="mt-5 leading-7 text-[#5f625e]">Chief baking adviser Chef Lin spent nine years training under Japanese bread master Mr Nogami. That discipline shapes Barcook&apos;s approach to texture, flavour and consistency.</p>
+            </article>
+            <article id="order" className="scroll-mt-24 border-b border-[#d9d5cb] py-10 md:border-b-0 md:border-r md:px-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a77b55]">Order</p>
+              <h3 className="mt-4 font-serif text-4xl">Made for your occasion.</h3>
+              <p className="mt-5 leading-7 text-[#5f625e]">Custom cakes are available by advance order. Choose a design from the catalogue, then contact Barcook Gallery to confirm size, lead time, collection date and availability.</p>
+              <a href="mailto:infobarcook@gmail.com?subject=Barcook%20Gallery%20Order%20Enquiry" className="mt-6 inline-flex items-center gap-2 font-semibold text-[#164f3b]">Start an enquiry <ArrowRight size={17} /></a>
+            </article>
+            <article id="join-us" className="scroll-mt-24 py-10 md:px-8 md:last:pr-0">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a77b55]">Join Us</p>
+              <h3 className="mt-4 font-serif text-4xl">Grow with Barcook.</h3>
+              <p className="mt-5 leading-7 text-[#5f625e]">Barcook welcomes energetic people who care about good food, warm service and practical craft. Introduce yourself and include the role or area that interests you.</p>
+              <a href="mailto:infobarcook@gmail.com?subject=Career%20at%20Barcook%20Gallery" className="mt-6 inline-flex items-center gap-2 font-semibold text-[#164f3b]">Send your introduction <ArrowRight size={17} /></a>
+            </article>
           </div>
         </div>
       </section>
@@ -583,16 +619,35 @@ export default function Home() {
             </div>
           </div>
           <div className="flex max-w-xl flex-wrap gap-x-5 gap-y-3 text-sm uppercase tracking-[0.18em] text-white/70">
-            <a href="https://barcookbakery.com/site/?page_id=1068" target="_blank" rel="noopener noreferrer">Locations</a>
-            <a href="https://barcookbakery.com/site/?product_types=all-products" target="_blank" rel="noopener noreferrer">Products</a>
-            <a href="https://barcookbakery.com/site/?page_id=799" target="_blank" rel="noopener noreferrer">Baking Advisor</a>
-            <a href="https://barcookbakery.com/site/?page_id=535" target="_blank" rel="noopener noreferrer">Order</a>
-            <a href="https://barcookbakery.com/site/?page_id=1136" target="_blank" rel="noopener noreferrer">Contact</a>
-            <a href="https://barcookbakery.com/site/?page_id=450" target="_blank" rel="noopener noreferrer">Join Us</a>
+            <a href="#visit">Location</a>
+            <a href="#menu">Products</a>
+            <a href="#baking-advisor">Baking Advisor</a>
+            <a href="#order">Order</a>
+            <a href="#visit">Contact</a>
+            <a href="#join-us">Join Us</a>
           </div>
           <p className="text-sm text-white/50">(c) Barcook Gallery</p>
         </div>
       </footer>
+
+      {selectedProduct && (
+        <div className="fixed inset-0 z-[70] flex items-end bg-black/60 p-0 backdrop-blur-sm sm:items-center sm:justify-center sm:p-5" role="presentation" onClick={() => setSelectedProduct(null)}>
+          <section role="dialog" aria-modal="true" aria-labelledby="product-dialog-title" className="relative grid max-h-[92svh] w-full max-w-4xl overflow-y-auto bg-white sm:grid-cols-2" onClick={(event) => event.stopPropagation()}>
+            <button type="button" onClick={() => setSelectedProduct(null)} aria-label="Close product details" title="Close" className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#164f3b] shadow-md"><X size={22} /></button>
+            <div className="relative min-h-72 bg-[#f5f2ea] sm:min-h-[560px]">
+              <Image src={selectedProduct.image} alt={selectedProduct.name} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+            </div>
+            <div className="flex flex-col justify-center p-7 sm:p-12">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a77b55]">{selectedProduct.category}</p>
+              <h2 id="product-dialog-title" className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">{selectedProduct.name}</h2>
+              <p className="mt-6 text-lg leading-8 text-[#5f625e]">{productDescriptions[selectedProduct.category]}</p>
+              {selectedProduct.price && <p className="mt-5 font-semibold leading-7 text-[#164f3b]">{selectedProduct.price}</p>}
+              <p className="mt-6 text-sm leading-6 text-[#777a75]">Product selection and availability may vary at Barcook Gallery Malaysia. Contact the outlet before placing a special order.</p>
+              <a href="mailto:infobarcook@gmail.com?subject=Product%20Enquiry" className="mt-8 inline-flex h-12 w-fit items-center justify-center gap-2 rounded-full bg-[#164f3b] px-6 text-sm font-semibold text-white">Enquire about this product <ArrowRight size={17} /></a>
+            </div>
+          </section>
+        </div>
+      )}
     </main>
     </MotionConfig>
   );
