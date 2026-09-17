@@ -487,6 +487,74 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="baking-advisor" className="scroll-mt-20 bg-[#e8e2d7] px-5 py-24 md:px-10 md:py-32">
+        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7 }}
+            className="relative min-h-[520px] overflow-hidden bg-white md:min-h-[680px]"
+          >
+            <Image
+              src="/images/baking-advisor/chef-lin.png"
+              alt="Chef Lin, Barcook chief baking adviser"
+              fill
+              sizes="(min-width: 1024px) 42vw, 100vw"
+              className="object-cover object-top"
+            />
+          </motion.div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ delay: 0.1, duration: 0.7 }}
+          >
+            <p className="section-kicker">Baking Advisor</p>
+            <h2 className="mt-4 font-serif text-6xl leading-none md:text-8xl">Chef Lin</h2>
+            <p className="mt-3 text-xl text-[#164f3b]">林育德师傅</p>
+            <p className="mt-8 max-w-2xl text-xl leading-9 text-[#444844]">
+              Chef Lin is Barcook&apos;s chief baking adviser and a protégé of highly regarded Japanese bread master Mr Nogami. After training under Mr Nogami for nine years, he built more than twelve years of professional baking experience.
+            </p>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5f625e]">
+              He is the chef-owner of Boulangerie Le Bois in Taichung, Taiwan, and has also served as chief baking adviser to Shanghai BF + Café. His discipline and technical knowledge continue to shape Barcook&apos;s breads, textures and everyday baking standards.
+            </p>
+            <div className="mt-10 grid grid-cols-2 border-y border-[#bcb5a9] py-7">
+              <div className="border-r border-[#bcb5a9] pr-6">
+                <p className="font-serif text-5xl text-[#164f3b]">9 years</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.16em] text-[#686b66]">Training under Mr Nogami</p>
+              </div>
+              <div className="pl-6">
+                <p className="font-serif text-5xl text-[#164f3b]">12+ years</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.16em] text-[#686b66]">Baking experience</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+        <div className="mx-auto mt-16 max-w-7xl">
+          <div className="mb-7 flex items-end justify-between gap-6">
+            <h3 className="font-serif text-4xl md:text-5xl">Stories of the craft</h3>
+            <p className="hidden max-w-sm text-right leading-7 text-[#5f625e] md:block">Two television features about traditional baking and the mentor-apprentice relationship behind the bread.</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div>
+              <div className="aspect-video overflow-hidden bg-[#0d3026]">
+                <iframe className="h-full w-full" src="https://www.youtube-nocookie.com/embed/jouVgprhc8w" title="Chef Lin traditional scallion bread feature" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <p className="mt-4 font-serif text-2xl">Traditional scallion bread</p>
+            </div>
+            <div>
+              <div className="aspect-video overflow-hidden bg-[#0d3026]">
+                <iframe className="h-full w-full" src="https://www.youtube-nocookie.com/embed/CVCzmQsg5ak" title="Chef Lin mentor and apprentice story" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <p className="mt-4 font-serif text-2xl">A mentor, an apprentice, and bread</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="information" className="bg-white px-5 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl">
@@ -495,19 +563,14 @@ export default function Home() {
               Everything you need, right here.
             </h2>
           </div>
-          <div className="mt-14 grid border-y border-[#d9d5cb] md:grid-cols-3">
-            <article id="baking-advisor" className="scroll-mt-24 border-b border-[#d9d5cb] py-10 md:border-b-0 md:border-r md:px-8 md:first:pl-0">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a77b55]">Baking Advisor</p>
-              <h3 className="mt-4 font-serif text-4xl">Craft guided by experience.</h3>
-              <p className="mt-5 leading-7 text-[#5f625e]">Chief baking adviser Chef Lin spent nine years training under Japanese bread master Mr Nogami. That discipline shapes Barcook&apos;s approach to texture, flavour and consistency.</p>
-            </article>
-            <article id="order" className="scroll-mt-24 border-b border-[#d9d5cb] py-10 md:border-b-0 md:border-r md:px-8">
+          <div className="mt-14 grid border-y border-[#d9d5cb] md:grid-cols-2">
+            <article id="order" className="scroll-mt-24 border-b border-[#d9d5cb] py-10 md:border-b-0 md:border-r md:pr-10">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a77b55]">Order</p>
               <h3 className="mt-4 font-serif text-4xl">Made for your occasion.</h3>
               <p className="mt-5 leading-7 text-[#5f625e]">Custom cakes are available by advance order. Choose a design from the catalogue, then contact Barcook Gallery to confirm size, lead time, collection date and availability.</p>
               <a href="mailto:infobarcook@gmail.com?subject=Barcook%20Gallery%20Order%20Enquiry" className="mt-6 inline-flex items-center gap-2 font-semibold text-[#164f3b]">Start an enquiry <ArrowRight size={17} /></a>
             </article>
-            <article id="join-us" className="scroll-mt-24 py-10 md:px-8 md:last:pr-0">
+            <article id="join-us" className="scroll-mt-24 py-10 md:pl-10">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#a77b55]">Join Us</p>
               <h3 className="mt-4 font-serif text-4xl">Grow with Barcook.</h3>
               <p className="mt-5 leading-7 text-[#5f625e]">Barcook welcomes energetic people who care about good food, warm service and practical craft. Introduce yourself and include the role or area that interests you.</p>
